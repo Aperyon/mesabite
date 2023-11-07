@@ -30,7 +30,7 @@ export default function FolderListItem({
   }
 
   return (
-    <li>
+    <li className="p-4 border border-2 border-red-900 rounded mb-4">
       <div className="flex justify-between items-center">
         <h3 className="text-xl font-bold">
           <Icon icon="folder" /> {folder.name}

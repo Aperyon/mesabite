@@ -15,7 +15,7 @@ export default function FolderList({
   }
 
   return (
-    <ul className="p-4 border border-2 border-red-900 rounded mb-4">
+    <ul>
       {folders.map((folder) => {
         const categoriesForFolder = categories.filter(
           (c) => c.folder === folder.url

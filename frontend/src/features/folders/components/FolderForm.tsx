@@ -6,7 +6,7 @@ import * as Yup from "Yup";
 import { Folder } from "../types";
 
 const schema = Yup.object().shape({
-  name: Yup.string().required(),
+  name: Yup.string().required().max(50),
   description: Yup.string(),
 });
 

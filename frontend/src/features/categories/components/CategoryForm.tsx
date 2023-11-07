@@ -8,7 +8,7 @@ import { Folder } from "../../folders/types";
 import { useQueryParams } from "../../../lib/query-params";
 
 const schema = Yup.object().shape({
-  name: Yup.string().required(),
+  name: Yup.string().required().max(10),
   description: Yup.string(),
 });
 
@@ -58,7 +58,12 @@ export default function CategoryForm({
           label="Photo"
           imageSrc={!!category ? category.image || "" : ""}
         />
-        <Field name="name" label="Name" placeholder="Example Category" />
+        <Field
+          name="name"
+          label="Name"
+          placeholder="Example Category"
+          max={50}
+        />
         <Field
           name="description"
           label="Description"

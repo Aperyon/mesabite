@@ -11,6 +11,7 @@ interface FieldProps {
   options?: { value: string; label: string }[];
   imageSrc?: string;
   autosubmit?: boolean;
+  max?: number;
 }
 export default function Field({
   label,
@@ -21,6 +22,7 @@ export default function Field({
   options,
   imageSrc,
   autosubmit,
+  max,
 }: FieldProps) {
   const { errors, touched } = useFormikContext();
   const hasError = !!errors[name] && !!touched[name];
@@ -41,6 +43,7 @@ export default function Field({
         options={options}
         imageSrc={imageSrc}
         autosubmit={autosubmit}
+        max={max}
       />
       {hasError && (
         <p className="text-red-500">
@@ -60,6 +63,7 @@ interface DynamicFieldProps {
   options?: { value: string; label: string }[];
   imageSrc?: string;
   autosubmit?: boolean;
+  max?: number;
 }
 
 function DynamicField({
@@ -71,6 +75,7 @@ function DynamicField({
   options,
   imageSrc,
   autosubmit,
+  max,
 }: DynamicFieldProps) {
   const { handleChange, submitForm, setFieldValue, values } =
     useFormikContext();
@@ -125,18 +130,26 @@ function DynamicField({
   }
 
   return (
-    <FormikField
-      type={type}
-      name={name}
-      id={id}
-      placeholder={placeholder}
-      className={className}
-      onChange={(e: any) => {
-        handleChange(e);
-        if (autosubmit) {
-          submitForm();
-        }
-      }}
-    />
+    <>
+      <FormikField
+        type={type}
+        name={name}
+        id={id}
+        placeholder={placeholder}
+        className={className}
+        onChange={(e: any) => {
+          handleChange(e);
+          if (autosubmit) {
+            submitForm();
+          }
+        }}
+        maxLength={max}
+      />
+      {!!max && (
+        <p className="text-right text-sm">
+          {values[name].length}/{max}
+        </p>
+      )}
+    </>
   );
 }
