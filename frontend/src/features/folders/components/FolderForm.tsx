@@ -29,7 +29,7 @@ export default function FolderForm({
       validationSchema={schema}
     >
       <Form>
-        <Field name="name" label="Name" placeholder="Example Folder" />
+        <Field name="name" label="Name" placeholder="Example Folder" max={50} />
         <Field
           name="description"
           label="Description"

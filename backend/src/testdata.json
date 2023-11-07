@@ -1,0 +1,104 @@
+[
+{
+  "model": "folders.folder",
+  "pk": 1,
+  "fields": {
+    "uuid": "a89e1788-f7d2-46bb-83b6-c83113523c36",
+    "created_at": "2023-11-07T15:00:09.135Z",
+    "last_modified": "2023-11-07T15:00:09.135Z",
+    "name": "Food",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "folders.folder",
+  "pk": 2,
+  "fields": {
+    "uuid": "de93dcdc-b32b-4009-8eba-bc90f366cb37",
+    "created_at": "2023-11-07T15:00:55.008Z",
+    "last_modified": "2023-11-07T15:00:55.008Z",
+    "name": "Drinks",
+    "description": "",
+    "image": ""
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 1,
+  "fields": {
+    "uuid": "3022a7e0-05a1-4fc6-bf24-341ef66765c6",
+    "created_at": "2023-11-07T15:01:02.995Z",
+    "last_modified": "2023-11-07T15:02:34.510Z",
+    "name": "Pizzas",
+    "description": "Pizza is a traditional Italian food many people love around to worl",
+    "image": "",
+    "folder": 1
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 2,
+  "fields": {
+    "uuid": "53bea21a-e914-401a-bf22-5b1701c1879e",
+    "created_at": "2023-11-07T15:01:08.518Z",
+    "last_modified": "2023-11-07T15:01:08.518Z",
+    "name": "Burgers",
+    "description": "",
+    "image": "",
+    "folder": 1
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 3,
+  "fields": {
+    "uuid": "2e7a2316-7074-424e-9a5c-6ae46ea028be",
+    "created_at": "2023-11-07T15:01:12.723Z",
+    "last_modified": "2023-11-07T15:01:12.723Z",
+    "name": "Fish",
+    "description": "",
+    "image": "",
+    "folder": 1
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 4,
+  "fields": {
+    "uuid": "52f8bf87-a1fe-45e1-b610-691d3a6cf3f5",
+    "created_at": "2023-11-07T15:01:17.697Z",
+    "last_modified": "2023-11-07T15:01:17.697Z",
+    "name": "Pastas",
+    "description": "",
+    "image": "",
+    "folder": 1
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 6,
+  "fields": {
+    "uuid": "05b35c4b-2f30-405a-afa5-15d926511ffe",
+    "created_at": "2023-11-07T15:02:06.993Z",
+    "last_modified": "2023-11-07T15:03:09.097Z",
+    "name": "Alcohol",
+    "description": "",
+    "image": "",
+    "folder": 2
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 7,
+  "fields": {
+    "uuid": "1ae6831e-f430-4820-8a2e-a8f7552abb20",
+    "created_at": "2023-11-07T15:02:55.729Z",
+    "last_modified": "2023-11-07T15:02:55.729Z",
+    "name": "No Folder category",
+    "description": "",
+    "image": "",
+    "folder": null
+  }
+}
+]
