@@ -3,5 +3,5 @@ export type Folder = {
   uuid: string;
   name: string;
   description: string;
-  photo_url: string;
+  image: string;
 };

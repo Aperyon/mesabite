@@ -29,7 +29,8 @@ export default function CategoryForm({
         folder: folders.find((f) => f.uuid == defaultFolderId)?.url || "",
         name: "",
         description: "",
-        photo_file: "",
+        image: "",
+        imageFile: null,
       };
 
   const saveText = !!category ? "Edit" : "Add";
@@ -50,6 +51,12 @@ export default function CategoryForm({
           type="select"
           options={folderOptions}
           placeholder="Select folder"
+        />
+        <Field
+          name="imageFile"
+          type="file"
+          label="Photo"
+          imageSrc={!!category ? category.image || "" : ""}
         />
         <Field name="name" label="Name" placeholder="Example Category" />
         <Field

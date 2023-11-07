@@ -11,7 +11,7 @@ export default function CategoryList({
   }
 
   return (
-    <ul className="p-4 border">
+    <ul className="">
       {categories.map((category) => (
         <CategoryListItem key={category.uuid} category={category} />
       ))}

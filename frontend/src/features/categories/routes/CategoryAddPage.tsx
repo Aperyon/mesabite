@@ -13,7 +13,7 @@ export default function CategoryAddPage() {
 
   function onSubmit(values: any) {
     addCategory.mutate(
-      { data: values },
+      { data: { ...values, image: values.imageFile } },
       {
         onSuccess: () => {
           navigate("/");

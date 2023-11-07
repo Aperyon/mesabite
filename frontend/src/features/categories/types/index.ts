@@ -4,5 +4,5 @@ export type Category = {
   name: string;
   description: string;
   photo_url: string;
-  folder: string | null;
+  image: string | null;
 };

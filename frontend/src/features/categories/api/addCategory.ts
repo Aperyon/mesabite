@@ -5,7 +5,9 @@ import toast from "react-hot-toast";
 import { queryClient } from "../../../lib/react-query";
 
 function addCategory(data: Partial<Category>): Promise<Category> {
-  return axios.post("/api/categories/", data);
+  return axios.post("/api/categories/", data, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
 }
 
 export function useAddCategory() {

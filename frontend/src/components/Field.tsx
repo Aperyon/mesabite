@@ -8,6 +8,7 @@ interface FieldProps {
   id?: string;
   placeholder?: string;
   options?: { value: string; label: string }[];
+  imageSrc?: string;
 }
 export default function Field({
   label,
@@ -16,6 +17,7 @@ export default function Field({
   id,
   placeholder,
   options,
+  imageSrc,
 }: FieldProps) {
   const { errors, touched } = useFormikContext();
   const hasError = !!errors[name] && !!touched[name];
@@ -32,6 +34,7 @@ export default function Field({
         id={id}
         placeholder={placeholder}
         options={options}
+        imageSrc={imageSrc}
       />
       {hasError && (
         <p className="text-red-500">
@@ -49,6 +52,7 @@ interface DynamicFieldProps {
   placeholder?: string;
   className?: string;
   options?: { value: string; label: string }[];
+  imageSrc?: string;
 }
 
 function DynamicField({
@@ -58,7 +62,10 @@ function DynamicField({
   placeholder,
   className,
   options,
+  imageSrc,
 }: DynamicFieldProps) {
+  const { setFieldValue, values } = useFormikContext();
+
   if (type === "textarea") {
     return (
       <FormikField
@@ -85,6 +92,26 @@ function DynamicField({
           </option>
         ))}
       </FormikField>
+    );
+  } else if (type === "file") {
+    return (
+      <div>
+        {values[name] ? (
+          <img src={URL.createObjectURL(values[name])} />
+        ) : imageSrc ? (
+          <img src={imageSrc} />
+        ) : null}
+        <input
+          name={name}
+          id={id}
+          type="file"
+          placeholder={placeholder}
+          className={className}
+          onChange={(e: any) => {
+            setFieldValue(name, e.currentTarget.files[0]);
+          }}
+        />
+      </div>
     );
   }
 
