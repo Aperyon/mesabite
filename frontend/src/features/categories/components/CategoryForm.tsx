@@ -8,7 +8,7 @@ import { Folder } from "../../folders/types";
 import { useQueryParams } from "../../../lib/query-params";
 
 const schema = Yup.object().shape({
-  name: Yup.string().required().max(10),
+  name: Yup.string().required().max(50),
   description: Yup.string(),
 });
 

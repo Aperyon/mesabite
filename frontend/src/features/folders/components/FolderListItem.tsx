@@ -22,7 +22,9 @@ export default function FolderListItem({
   ];
 
   function onDeleteClick(folder: Folder) {
-    deleteFolder.mutate({ folder });
+    if (confirm("Are you sure you want to delete this Folder?")) {
+      deleteFolder.mutate({ folder });
+    }
   }
 
   function onEditClick(folder: Folder) {
@@ -53,6 +55,7 @@ export default function FolderListItem({
           <Icon icon="plus" /> Add Category to Folder
         </Link>
       </div>
+
       <CategoryList categories={categories} />
     </li>
   );

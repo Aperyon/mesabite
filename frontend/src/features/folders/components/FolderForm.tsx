@@ -38,7 +38,12 @@ export default function FolderForm({
         />
 
         <div className="flex justify-center space-x-8 items-center">
-          <Link to="/">Cancel</Link>
+          <Link
+            to="/"
+            className="border-2 border-red-900 bg-gray-200 px-4 py-2 rounded-full "
+          >
+            Cancel
+          </Link>
           <Button type="submit">{saveText}</Button>
         </div>
       </Form>
