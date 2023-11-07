@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import { ErrorMessage, Field as FormikField, useFormikContext } from "formik";
+import { ReactNode } from "react";
 
 interface FieldProps {
-  label: string;
+  label: string | ReactNode;
   type?: string;
   name: string;
   id?: string;
@@ -23,9 +24,11 @@ export default function Field({
   const hasError = !!errors[name] && !!touched[name];
 
   const labelClasses = classNames("block", [hasError && "text-red-500"]);
-  const fieldClasses = classNames([hasError && "border-red-500 text-red-500"]);
+  const fieldClasses = classNames("bg-transparent block w-full", [
+    hasError && "border-red-500 text-red-500",
+  ]);
   return (
-    <div>
+    <div className="mb-4">
       <label className={labelClasses}>{label}</label>
       <DynamicField
         className={fieldClasses}

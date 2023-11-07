@@ -46,7 +46,10 @@ export default function FolderListItem({
         </ul>
       </div>
       <div>
-        <Link to={`/categories/add?folder_id=${folder.uuid}`}>
+        <Link
+          to={`/categories/add?folder_id=${folder.uuid}`}
+          className=" border border-red-900 border-2 bg-yellow-300 font-bold px-4 py-2 rounded-full inline-block my-2"
+        >
           <Icon icon="plus" /> Add Category to Folder
         </Link>
       </div>

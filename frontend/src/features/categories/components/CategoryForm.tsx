@@ -33,7 +33,7 @@ export default function CategoryForm({
         imageFile: null,
       };
 
-  const saveText = !!category ? "Edit" : "Add";
+  const saveText = !!category ? "Edit Category" : "Add Category";
   const folderOptions = folders.map((folder) => ({
     value: folder.url,
     label: folder.name,
@@ -66,8 +66,13 @@ export default function CategoryForm({
           placeholder="Write a short and easy to read description"
         />
 
-        <div>
-          <Link to="/">Cancel</Link>
+        <div className="flex justify-center space-x-8 items-center">
+          <Link
+            to="/"
+            className="border-2 border-red-900 bg-gray-200 px-4 py-2 rounded-full "
+          >
+            Cancel
+          </Link>
           <Button type="submit">{saveText}</Button>
         </div>
       </Form>

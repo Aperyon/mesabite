@@ -26,7 +26,7 @@ export default function CategoryListItem({ category }: { category: Category }) {
       className={`block bg-no-repeat bg-cover bg-center w-full h-64 rounded overflow-hidden mb-4`}
       style={{ backgroundImage: `url(${category.image})` }}
     >
-      <div className="bg-gradient-to-t from-black/75 to-black/0 p-4 h-full flex justify-end flex-col">
+      <div className="bg-gradient-to-t from-red-900/100 to-red-900/0 p-4 h-full flex justify-end flex-col">
         <div className="flex">
           <div className="bg-black/25 px-2 py-1 rounded-full text-white">
             {Math.floor(Math.random() * 10)} items

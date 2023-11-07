@@ -2,7 +2,8 @@ import classNames from "classnames";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
 const variants = {
-  primary: "bg-blue-500 text-white",
+  primary: "bg-red-700 text-white",
+  secondary: "bg-gray-200 text-white",
 };
 
 interface ButtonProps {
@@ -16,7 +17,7 @@ export default function Button({
   type = "button",
   ...props
 }: ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) {
-  const classes = classNames("px-4 py-3", variants[variant]);
+  const classes = classNames("px-4 py-3 rounded-full", variants[variant]);
   return (
     <button {...props} className={classes} type={type}>
       {children}

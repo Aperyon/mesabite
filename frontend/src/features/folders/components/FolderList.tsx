@@ -11,16 +11,11 @@ export default function FolderList({
   categories: Category[];
 }) {
   if (folders.length === 0) {
-    return (
-      <div>
-        <h2>No Category Folders were found</h2>
-        <Link to="/folders/add">Add your first Category Folder</Link>
-      </div>
-    );
+    return null;
   }
 
   return (
-    <ul className="p-4 border">
+    <ul className="p-4 border border-2 border-red-900 rounded mb-4">
       {folders.map((folder) => {
         const categoriesForFolder = categories.filter(
           (c) => c.folder === folder.url

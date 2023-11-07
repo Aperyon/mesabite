@@ -37,7 +37,7 @@ export default function FolderForm({
           placeholder="Write a short and easy to read description"
         />
 
-        <div>
+        <div className="flex justify-center space-x-8 items-center">
           <Link to="/">Cancel</Link>
           <Button type="submit">{saveText}</Button>
         </div>
