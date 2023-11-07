@@ -2,12 +2,8 @@ import { Form, Formik } from "formik";
 import Field from "./Field";
 import Icon from "./Icon";
 
-export default function OmniSearch() {
-  const initialValues = { name: "" };
-
-  function onSubmit(values) {
-    console.log("submitted");
-  }
+export default function OmniSearch({ onSubmit }: { onSubmit: any }) {
+  const initialValues = { search: "" };
 
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
@@ -20,6 +16,7 @@ export default function OmniSearch() {
             </>
           }
           placeholder="Search for Category Folders"
+          autosubmit
         />
       </Form>
     </Formik>

@@ -10,6 +10,7 @@ interface FieldProps {
   placeholder?: string;
   options?: { value: string; label: string }[];
   imageSrc?: string;
+  autosubmit?: boolean;
 }
 export default function Field({
   label,
@@ -19,6 +20,7 @@ export default function Field({
   placeholder,
   options,
   imageSrc,
+  autosubmit,
 }: FieldProps) {
   const { errors, touched } = useFormikContext();
   const hasError = !!errors[name] && !!touched[name];
@@ -38,6 +40,7 @@ export default function Field({
         placeholder={placeholder}
         options={options}
         imageSrc={imageSrc}
+        autosubmit={autosubmit}
       />
       {hasError && (
         <p className="text-red-500">
@@ -56,6 +59,7 @@ interface DynamicFieldProps {
   className?: string;
   options?: { value: string; label: string }[];
   imageSrc?: string;
+  autosubmit?: boolean;
 }
 
 function DynamicField({
@@ -66,8 +70,10 @@ function DynamicField({
   className,
   options,
   imageSrc,
+  autosubmit,
 }: DynamicFieldProps) {
-  const { setFieldValue, values } = useFormikContext();
+  const { handleChange, submitForm, setFieldValue, values } =
+    useFormikContext();
 
   if (type === "textarea") {
     return (
@@ -125,6 +131,12 @@ function DynamicField({
       id={id}
       placeholder={placeholder}
       className={className}
+      onChange={(e: any) => {
+        handleChange(e);
+        if (autosubmit) {
+          submitForm();
+        }
+      }}
     />
   );
 }
